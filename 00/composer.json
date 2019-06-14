@@ -1,0 +1,13 @@
+{
+    "name": "fernando/slim",
+    "description": "aula slim",
+    "authors": [
+        {
+            "name": "Fernando rodrigues",
+            "email": "ferandno1587@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.12"
+    }
+}

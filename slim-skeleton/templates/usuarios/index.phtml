@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Slim 3</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                margin: 50px 0 0 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-align: center;
+                color: #aaa;
+                font-size: 18px;
+            }
+
+            h1 {
+                color: #719e40;
+                letter-spacing: -3px;
+                font-family: 'Lato', sans-serif;
+                font-size: 100px;
+                font-weight: 200;
+                margin-bottom: 0;
+            }
+            table, form{
+                width:100%;
+                max-width:600px;
+                margin: 40px auto;    
+            }
+            form input, .btn{
+                display:block;
+                padding:20px;
+                border-radius:10px;
+                border:1px solid #ccc;
+                width:100%;
+                margin: 10px 0;
+            }
+            form input[type='submit'], .btn{
+                cursor:pointer;
+                color:#fff;
+                background-color:#000;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Template </h1>
+        <div>Lista De Usuarios</div>
+         <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nome</th>
+                    <th>Remover</th>
+                </tr>
+                   
+            </thead>
+            <tbody>
+                <?php foreach($usuarios as $usuario): ?>
+                   <tr> 
+                    <td><?php echo $usuario->id;?></td>
+                    <td><?php echo $usuario->nome;?></td>
+                    <td><a href="/usuarios/<?php echo $usuario->id;?>" class="btn">Excluir</a></td>
+                   </tr> 
+                <?php endforeach;?>
+            </tbody>
+         </table>
+        <form action="" action="/usuarios" method="post">
+        <input type="text" name="nome" placeholder="Nome">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password"  name="senha" placeholder="Senha">
+        <input type="submit" value="cadastrar">
+        </form>   
+
+    </body>
+</html>
